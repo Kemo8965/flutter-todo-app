@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         ),
 
         // drawer: NavigationBar,
-        body: const MyCardWidget(),
+        body: const MyCardWidget3(),
 
         bottomNavigationBar: BottomNavigationBar(items: const [
           BottomNavigationBarItem(
@@ -148,6 +148,228 @@ class MyCardWidget extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyCardWidget3 extends StatelessWidget {
+  const MyCardWidget3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        SizedBox(
+          height: 220,
+          child: Stack(children: [
+            Positioned(
+              top: 35,
+              left: 20,
+              child: Material(
+                child: Container(
+                    height: 180.0,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.blue[50],
+                      borderRadius: BorderRadius.circular(2.8),
+                      // ignore: unnecessary_new
+                    )),
+              ),
+            ),
+            Positioned(
+                top: 10,
+                left: 30,
+                child: Card(
+                  elevation: 10.0,
+                  shadowColor: Colors.grey.withOpacity(0.5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0)),
+                  child: Container(
+                    height: 180,
+                    width: 130,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        image: const DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("images/cows2.jpg"))),
+                  ),
+                )),
+            Positioned(
+                top: 60,
+                left: 200,
+                child: SizedBox(
+                  height: 150,
+                  width: 160,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Text(
+                        "Bulls",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFF363f93),
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const Divider(
+                        color: Colors.blue,
+                        indent: 0,
+                        endIndent: 60,
+                        thickness: 2,
+                      ),
+                      const Text(
+                        "Manage your herd",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ))
+          ]),
+        ),
+        SizedBox(
+          height: 220,
+          child: Stack(children: [
+            Positioned(
+              top: 35,
+              left: 20,
+              child: Material(
+                child: Container(
+                    height: 180.0,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow[100],
+                      borderRadius: BorderRadius.circular(2.8),
+                      // ignore: unnecessary_new
+                    )),
+              ),
+            ),
+            Positioned(
+                top: 10,
+                left: 30,
+                child: Card(
+                  elevation: 10.0,
+                  shadowColor: Colors.grey.withOpacity(0.5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0)),
+                  child: Container(
+                    height: 180,
+                    width: 130,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        image: const DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("images/cows3.jpg"))),
+                  ),
+                )),
+            Positioned(
+                top: 60,
+                left: 200,
+                child: SizedBox(
+                  height: 150,
+                  width: 160,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Text(
+                        "Cows",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFF363f93),
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const Divider(
+                        color: Colors.blue,
+                        indent: 0,
+                        endIndent: 60,
+                        thickness: 2,
+                      ),
+                      const Text(
+                        "Manage your herd",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ))
+          ]),
+        ),
+        SizedBox(
+          height: 220,
+          child: Stack(children: [
+            Positioned(
+              top: 35,
+              left: 20,
+              child: Material(
+                child: Container(
+                    height: 180.0,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.blue[50],
+                      borderRadius: BorderRadius.circular(2.8),
+                      // ignore: unnecessary_new
+                    )),
+              ),
+            ),
+            Positioned(
+                top: 10,
+                left: 30,
+                child: Card(
+                  elevation: 10.0,
+                  shadowColor: Colors.grey.withOpacity(0.5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0)),
+                  child: Container(
+                    height: 180,
+                    width: 130,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        image: const DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("images/cows2.jpg"))),
+                  ),
+                )),
+            Positioned(
+                top: 60,
+                left: 200,
+                child: SizedBox(
+                  height: 150,
+                  width: 160,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Text(
+                        "Herd",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFF363f93),
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const Divider(
+                        color: Colors.blue,
+                        indent: 0,
+                        endIndent: 60,
+                        thickness: 2,
+                      ),
+                      const Text(
+                        "Manage your herd",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ))
+          ]),
+        )
+      ],
     );
   }
 }
