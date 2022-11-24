@@ -84,42 +84,51 @@ class MyPeopleProfie extends StatelessWidget {
       } else {
         return NarrowLayout();
       }
-
-      return Center(
-        child: ListView(
-          children: <Widget>[
-            for (var person in people)
-              ListTile(
-                leading: Image.network(person.picture),
-                title: Text(person.name),
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: ((context) => Scaffold(
-                        appBar: AppBar(
-                          title: const Text('Litmas Client Details'),
-                          backgroundColor: Color(0xFF363f93),
-                          toolbarHeight: 90,
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(80),
-                          )),
-                        ),
-                        body: PersonDetail(person))))),
-              )
-          ],
-        ),
-      );
     });
   }
 }
 
-class WideLayout extends StatelessWidget {
-  const WideLayout({super.key});
+class PeopleList extends StatelessWidget {
+  final void Function(Person) onPersonTap;
+
+  const PeopleList({super.key, required this.onPersonTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: NarrowLayout(),
-      color: Colors.amberAccent,
+    return ListView(
+      children: <Widget>[
+        for (var person in people)
+          ListTile(
+            leading: Image.network(person.picture),
+            title: Text(person.name),
+            onTap: () => onPersonTap(person),
+          )
+      ],
+    );
+  }
+}
+
+class WideLayout extends StatefulWidget {
+  @override
+  _WideLayoutState createState() => _WideLayoutState();
+}
+
+class _WideLayoutState extends State<WideLayout> {
+  late Person _person;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+            child: PeopleList(
+                onPersonTap: (person) => setState(() => _person = person)),
+            flex: 2),
+        Expanded(
+          child: _person == null ? Placeholder() : PersonDetail(_person),
+          flex: 3,
+        ),
+      ],
     );
   }
 }
